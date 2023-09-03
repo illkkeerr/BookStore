@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<script>
+    window.onload = function() {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+
+    };
+
+</script>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MVC Stok</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Kategoriler</a></li>
+                <li><a href="kitaplar.html">Kitaplar</a></li>
+                <li><a href="musteriler.html">Müşteriler</a></li>
+                <li><a href="oduncGecmisi.html">ÖdüncGecmisi</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <table class="table table-bordered" id="kategoriTablosu">
+            <thead>
+                <tr>
+                    <th>Kategori Id</th>
+                    <th>Kategori Adı</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr id="1">
+                    <td>1</td>
+                    <td id="Ad1">Macera</td>
+
+                    <td><a id="1" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>
+                    <td><a id="1" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>
+
+                </tr>
+                <tr id="2">
+                    <td>2</td>
+                    <td id="Ad2">Polisiye</td>
+
+                    <td><a id=" 2" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>
+                    <td><a id="2" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>
+
+                </tr>
+                <tr id="3">
+                    <td>3</td>
+                    <td id="Ad3">Toplum</td>
+
+                    <td><a id="3" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>
+                    <td><a id="3" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>
+
+                </tr>
+                <tr id="4">
+                    <td>4</td>
+                    <td id="Ad4">Psikolojik</td>
+
+                    <td><a id="4" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>
+
+                    <td><a id="4" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>
+
+                </tr>
+                <tr id="5">
+                    <td>5</td>
+                    <td id="Ad5">İntikam</td>
+
+                    <td><a id="5" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>
+
+                    <td><a id="5" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <button type="button" id="showModalBtn" class="btn btn-primary">Yeni Kategori Ekle</button>
+    </div>
+
+    <div id="_kategoriEkle" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kategori Ekle</h2>
+            <form>
+
+                <input type="text" id="kategoriAdi" placeholder="Kategori Adı">
+
+                <button type="button" onclick="kategoriEkle()">Kategori Ekle</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div id="_kategoriGuncelle" class="modal2">
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <h2>Kategori Güncelle</h2>
+            <form>
+                <label>Id:</label>
+                <input type="text" id="kategoriId" readonly>
+                <label>Kategori Adi:</label>
+                <input type="text" id="kategoriAdi">
+
+                <button type="button" id="guncelle">Kategori Guncelle</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        ///////////////////MODAL EKLE///////////////////////////
+        const showModalBtn = document.getElementById("showModalBtn");
+        const modal = document.getElementById("_kategoriEkle");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+
+        showModalBtn.addEventListener("click", function() {
+            modal.style.display = "block";
+        });
+
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+        ///////////////////MODAL GUNCELLE///////////////////////////
+
+        //const showModalBtn2 = document.getElementById("showModalBtn");
+        const modal2 = document.getElementById("_kategoriGuncelle");
+        const closeModal2 = document.getElementsByClassName("close2")[0];
+
+
+        /* showModalBtn2.addEventListener("click", function() {
+             modal2.style.display = "block";
+         });*/
+
+        closeModal2.addEventListener("click", function() {
+            modal2.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal2.style.display = "none";
+            }
+        });
+        /////////////////////////KATEGORİ GUNCELLE////////////////
+
+
+        function guncelle(id) {
+            var _kategoriId = id;
+            var deger = "Ad" + id;
+            var _kategoriAdi = document.getElementById(deger).innerHTML;
+            console.log(id + _kategoriAdi);
+            var textbox = modal2.querySelector('#kategoriId');
+            var textbox2 = modal2.querySelector('#kategoriAdi');
+            textbox.value = _kategoriId;
+            textbox2.value = _kategoriAdi;
+            modal2.style.display = "block";
+
+            const btn = modal2.querySelector('#guncelle');
+            btn.addEventListener("click", function(event) {
+
+                var ad = document.getElementById(deger);
+                console.log(textbox2.value)
+                console.log(ad.textContent)
+
+                ad.textContent = textbox2.value;
+                modal2.style.display = "none";
+            });
+        }
+
+        //////////////////////////KATEGORİ EKLE//////////////////
+        var id = 6;
+
+        function kategoriEkle() {
+
+
+            // Kategori Adı ve ID'sini alın
+            var kategoriAdi = document.getElementById("kategoriAdi").value;
+            var kategoriID = Math.floor(id); // Rasgele bir ID oluşturabilirsiniz
+            id++
+            // Tabloya yeni bir satır ekleyin
+            var table = document.getElementById("kategoriTablosu").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.id = kategoriID;
+
+
+            // Hücreler oluşturun ve verileri ekleyin
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            cell1.innerHTML = kategoriID;
+            cell2.innerHTML = kategoriAdi;
+            cell2.id = 'Ad' + kategoriID;
+            cell3.innerHTML = '<td><a id="' + kategoriID + '" class="btn btn-danger sil" onclick="sil(id)">SİL</a></td>';
+            cell4.innerHTML = '<td><a id="' + kategoriID + '" class="btn btn-success" onclick="guncelle(id)">Guncelle</a></td>';
+
+            modal.style.display = "none";
+
+
+        }
+
+        /////////////////////////KATEGORİ SİL///////////////////////
+
+        function sil(id) {
+
+
+            var satirId = id // Tıklanan düğmenin ID'sini al
+            console.log('Tıklanan ID: ' + satirId);
+
+            // ID'ye göre tablodan satırı bul ve sil
+            $('#kategoriTablosu tbody tr[id="' + satirId + '"]').closest('tr').remove();
+
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

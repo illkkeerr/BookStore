@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MVC Stok</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Kategoriler</a></li>
+                <li><a href="kitaplar.html">Kitaplar</a></li>
+                <li><a href="musteriler.html">Müşteriler</a></li>
+                <li><a href="oduncGecmisi.html">ÖdüncGecmisi</a></li>
+               
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Kitap Id</th>
+                <th>Başlık</th>
+                <th>Yazar</th>
+                <th>Yayın Tarihi</th>
+                <th>Stok Sayısı</th>
+                <th>Kategori</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+
+            </tr>
+            <tbody>
+
+
+                <tr>
+                    <th>1</th>
+                    <td>Sefiller</td>
+                    <td>Victor Hugo</td>
+                    <td>01.01.1998</td>
+                    <td>100</td>
+                    <td>Toplum</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Sherlock Holmes</td>
+                    <td>Sir Arthur Conan Doyle</td>
+                    <td>01.01.1998</td>
+                    <td>100</td>
+                    <td>Polisiye</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Dönüşüm</td>
+                    <td>Franz Kafka</td>
+                    <td>01.01.1998</td>
+                    <td>100</td>
+                    <td>Psikoloji</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td>Monte Cristo Kontu</td>
+                    <td>Alexandre Dumas</td>
+                    <td>01.01.1998</td>
+                    <td>100</td>
+                    <td>İntikam</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <a href="/Musteri/YeniMusteri" class="btn btn-primary">Yeni Kitap Ekle</a>
+
+
+    </div>
+
+</body>
+
+</html>

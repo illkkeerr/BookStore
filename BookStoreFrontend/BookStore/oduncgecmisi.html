@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MVC Stok</a>
+            </div>
+           <ul class="nav navbar-nav">
+                <li><a href="index.html">Kategoriler</a></li>
+                <li><a href="kitaplar.html">Kitaplar</a></li>
+                <li><a href="musteriler.html">Müşteriler</a></li>
+                <li><a href="oduncGecmisi.html">ÖdüncGecmisi</a></li>
+               
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <!--public int KayitId { get; set; }
+        public int MusteriId { get; set; }
+        public int KitapId { get; set; }
+        public DateTime OduncTarihi { get; set; }
+        public DateTime IadeTarihi { get; set; }-->
+                <th>Kayıt Id</th>
+                <th>Müşteri</th>
+                <th>Kitap</th>
+                <th>Odunc Tarihi</th>
+                <th>İade Tarihi</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+
+            </tr>
+            <tbody>
+
+
+                <tr>
+                    <th>1</th>
+                    <td>İlker Şenel</td>
+                    <td>Sefiller</td>
+                    <td>01.01.1999</td>
+                    <td>01.01.2000</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Tubanur Yazıcı</td>
+                    <td>Sadece Şeyma</td>
+                    <td>01.01.1999</td>
+                    <td>01.01.2000</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Görkem Irk</td>
+                    <td>Yüzüklerin efendisi</td>
+                    <td>01.01.1999</td>
+                    <td>01.01.2000</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td>Mehmet Sunay</td>
+                    <td>Monte Cristo Kontu</td>
+                    <td>01.01.1999</td>
+                    <td>01.01.2000</td>
+                    <td><a href="/Musteri/Sil/@mus.MusteriId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Musteri/MusteriGetir/@mus.MusteriId" class="btn btn-success">Guncelle</a></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <a href="/Musteri/YeniMusteri" class="btn btn-primary">Yeni Kayıt Ekle</a>
+    </div>
+
+</body></html>
